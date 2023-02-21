@@ -18,7 +18,34 @@ func paintNeeded(witdth float64, height float64) (float64, error) {
 	return area / 10.0, nil
 }
 
+func pointerTest() {
+	myInt := 4
+	fmt.Println(myInt)
+
+	myIntPointer := &myInt
+	*myIntPointer = 88
+	fmt.Printf("pointer:%v,value: %v\n", myIntPointer, *myIntPointer)
+}
+
+func pointerTest2() {
+	var myInt int
+	myIntPoint := &myInt
+
+	*myIntPoint = 99
+	fmt.Println(myInt, *myIntPoint)
+}
+
+func pointerTest3(myBoolean *bool) {
+	*myBoolean = !*myBoolean
+}
+
 func main() {
+	pointerTest2()
+	pointerTest()
+	truth := true
+	pointerTest3(&truth)
+	fmt.Println(truth)
+
 	fmt.Printf("%12s|%s\n", "Product", "Cost in cents")
 	fmt.Println(strings.Repeat("-", 30))
 	fmt.Printf("%12s|%3d\n", "Stamps", 50)
@@ -36,4 +63,5 @@ func main() {
 	}
 
 	fmt.Printf("0.2f liters needed!\n", amount)
+
 }
