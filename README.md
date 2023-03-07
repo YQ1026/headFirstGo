@@ -109,8 +109,13 @@
 3.判断映射是否存在
   counters := map[string]int{"a": 3, "b": 4}
 
+  // 删除一个元素
+  delete(counters,"b")
+
   valueB, ok := counters["b"]
   if ok {
 	fmt.Println(valueB)
   }
+
+4. for...range 打印出的结果是无序的 如果有序 sort.Strings(name) 
 ```
